@@ -35,7 +35,7 @@ for artikel in alles:
     if artikel[1] != product[1]:
         if artikel[4] == product[4]:
             if artikel[5] == product[5]:
-                if artikel[6] == product[6]:
+                if artikel[6] != product[6]:
                     if artikel[7] == product[7]:
                         aanbevelingen.append(artikel)
 
