@@ -3,7 +3,6 @@ In deze file staan de python commands die gebruikt worden
 om de SQL taken uit te voeren in de relationele database.
 """
 
-from select import select
 import psycopg2
 
 #verbinding maken met de database
