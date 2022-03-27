@@ -19,7 +19,6 @@ cur.execute("select * from products")
 #producten opslaan in variabele
 alles = cur.fetchall()
 
-#er achter komen welk product is gekocht
 #vraag naar product id
 productid = input("wat is het ID van het gekocht product?: ")
 #sla het product op in variabele
