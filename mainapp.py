@@ -1,9 +1,9 @@
 """
-Reccomendation op basis van vergelijkbare producten in de database.
+Content Filtering: Reccomendation op basis van vergelijkbare producten in de database.
 """
 #database module importeren
 import psycopg2
-
+import random
 
 #verbinding maken met de database
 con = psycopg2.connect( 
@@ -23,7 +23,8 @@ productid = str(input("wat is het ID van het gekocht product?: "))
 cur.execute(f"select * from products where id = \'{productid}\'")
 product= cur.fetchall()
 product = product[0]
-print(product)
+print(f"U HEEFT GEKOCHT:\n{product[1]}\n")
+
 
 
 
@@ -38,6 +39,14 @@ for artikel in alles:
                     if artikel[7] == product[7]:
                         aanbevelingen.append(artikel)
 
+aanbevolen = []
+while len(aanbevolen) <4:
+    aanbevolen.append(random.choice(aanbevelingen))
+
+print("OOK AAN TE RADEN:")
+for i in aanbevolen:
+    print(i[1])
+    print()
 
 
 cur.close()
